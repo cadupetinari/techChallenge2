@@ -1,14 +1,14 @@
 services:
-  app:
-    image: techchallengefiapcadupetinari
-    ports:
-      - "8080:8080"
-
   database:
     image: postgres
     ports:
       - "5432:5432"
-    container_name: postgresql
+    container_name: database
     environment:
-      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=fiapOn88
+      - POSTGRES_DB=techChallenge
+      
+  app:
+    image: cadupetinari88/techchallengefiapcadupetinari:v1
+    ports:
+      - "8080:8080"
