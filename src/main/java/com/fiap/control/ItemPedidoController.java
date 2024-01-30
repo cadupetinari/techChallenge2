@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fiap.model.ItemPedido;
+import com.fiap.model.Produto;
+
 import java.util.List;
 
 @RestController
@@ -18,6 +20,16 @@ public class ItemPedidoController {
  @GetMapping
  public List<ItemPedido> listarItensPedidos() {
      return itemPedidoRepository.findAll();
+ }
+ 
+ @GetMapping("/{id}")
+ public List<ItemPedido> obterItensProdutoPorID(@PathVariable Long id) {
+	 List<ItemPedido> itensProduto = itemPedidoRepository.existsByIdPedido(id);
+     if (itensProduto != null) {
+         return itensProduto;
+     } else {
+         return null;
+     }
  }
 
  @PostMapping

@@ -1,6 +1,8 @@
 package com.fiap.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,10 +17,11 @@ public class Pedido {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private int cpf;
+	private String cpf;
     private double valorTotal;
     private int ordemFila;
-    private Date dataCriacao;
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
+    private LocalDateTime dataCriacao;
     private String status;
     private String statusPagamento;
     
@@ -26,13 +29,13 @@ public class Pedido {
 	public Long getId() {
 		return id;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 	public double getValorTotal() {
 		return valorTotal;
 	}
-	public Date getDataCriacao() {
+	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
 	public int getOrdemFila() {
@@ -49,13 +52,13 @@ public class Pedido {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	public void setDataCriacao(Date dataCriacao) {
+	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 	public void setOrdemFila(int ordemFila) {

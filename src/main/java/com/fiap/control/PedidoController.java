@@ -20,6 +20,16 @@ public class PedidoController {
  public List<Pedido> listarPedidos() {
      return pedidoRepository.findAll();
  }
+ 
+ @GetMapping("/{id}")
+ public ResponseEntity<Pedido> obterPedido(@PathVariable Long id) {
+     Pedido pedido = pedidoRepository.findById(id).orElse(null);
+     if (pedido != null) {
+         return new ResponseEntity<>(pedido, HttpStatus.OK);
+     } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+     }
+ }
 
  @PostMapping
  public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido) {
@@ -38,6 +48,17 @@ public class PedidoController {
      }
  }
  
+ @DeleteMapping("/{id}")
+ public ResponseEntity<Void> excluirPedido(@PathVariable Long id) {
+     if (pedidoRepository.existsById(id)) {
+    	 pedidoRepository.deleteById(id);
+         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+     } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+     }
+ }
+
+ /*
  @PutMapping("/status/{id}")
  public ResponseEntity<Pedido> atualizarStatusPedido(@PathVariable Long id, @RequestBody String statusAtualizado){
 	 Pedido pedidoParaAtualizar = pedidoRepository.findById(id).orElse(null);
@@ -63,5 +84,5 @@ public class PedidoController {
      } else {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
      }
- }
+ } */
 }

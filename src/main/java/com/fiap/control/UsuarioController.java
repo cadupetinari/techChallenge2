@@ -18,7 +18,8 @@ public class UsuarioController {
  @Autowired
  private UsuarioRepository usuarioRepository;
  
- @GetMapping("/loginAdm/{cpf}")
+ /*
+ @GetMapping("/loginAdm")
  @ApiOperation(value = "Realiza login do usuário interno.")
  public ResponseEntity<Usuario> loginAdm(@PathVariable Usuario loginUsuario) {
      Usuario login = usuarioRepository.existsByCpfAndSenha(loginUsuario.getCpf(), loginUsuario.getSenha());
@@ -27,7 +28,7 @@ public class UsuarioController {
      } else {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
      }
- }
+ } */
  
  @GetMapping("/{cpf}")
  @ApiOperation(value = "Valida se consumidor já está cadastrado na base.")
