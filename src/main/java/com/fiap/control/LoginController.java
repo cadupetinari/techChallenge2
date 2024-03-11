@@ -19,7 +19,7 @@ public class LoginController {
     public String login(@RequestBody Usuario usuario) {
     	System.out.println("CPF: " + usuario.getCpf());
     	
-    	Usuario response = usuarioRepository.existsByCPF(usuario.getCpf());
+    	Usuario response = usuarioRepository.existsByCpf(usuario.getCpf());
     	
     	if (response != null) {
             return "Que bom ver você de volta, " + response.getNome() +"!";

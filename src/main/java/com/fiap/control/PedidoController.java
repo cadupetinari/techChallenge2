@@ -1,5 +1,6 @@
 package com.fiap.control;
 
+import com.fiap.model.ItemPedido;
 import com.fiap.model.Pedido;
 import com.fiap.usecase.PedidoUseCase;
 import io.swagger.annotations.Api;
