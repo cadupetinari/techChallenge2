@@ -16,7 +16,7 @@ public class UsuarioUseCase {
     }
 
     public Usuario buscarUsuarioPorCPF(String cpf) {
-        return usuarioRepository.existsByCPF(cpf);
+        return usuarioRepository.existsByCpf(cpf);
     }
 
     public Usuario criarUsuario(Usuario usuario) {
