@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minha-aplicacao
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: minha-aplicacao
+  template:
+    metadata:
+      labels:
+        app: minha-aplicacao
+    spec:
+      containers:
+      - name: minha-aplicacao
+        image: cadupetinari88/techchallengefiapcadupetinari:v1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:postgresql://database:5432/techChallenge"
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: database-secrets
+              key: postgres-user
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-secrets
+              key: postgres-password
