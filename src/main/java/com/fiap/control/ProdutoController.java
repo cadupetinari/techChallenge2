@@ -1,60 +1,63 @@
 package com.fiap.control;
 
+import com.fiap.model.Produto;
+import com.fiap.usecase.ProdutoUseCase;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.fiap.model.Produto;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("/fastFoodApi/produtos")
+@RequestMapping("/fastFoodApi/produto")
 public class ProdutoController {
 
- @Autowired
- private ProdutoRepository produtoRepository;
+    private final ProdutoUseCase produtoUseCase;
 
- @GetMapping
- public List<Produto> listarProdutos() {
-     return produtoRepository.findAll();
- }
+    @Autowired
+    public ProdutoController(ProdutoUseCase produtoUseCase) {
+        this.produtoUseCase = produtoUseCase;
+    }
 
- @GetMapping("/{id}")
- public ResponseEntity<Produto> obterProduto(@PathVariable Long id) {
-     Produto produto = produtoRepository.findById(id).orElse(null);
-     if (produto != null) {
-         return new ResponseEntity<>(produto, HttpStatus.OK);
-     } else {
-         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-     }
- }
+    @GetMapping
+    @ApiOperation("Lista todos os produtos")
+    public List<Produto> listarProdutos() {
+        return produtoUseCase.listarProdutos();
+    }
 
- @PostMapping
- public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
-     Produto novoProduto = produtoRepository.save(produto);
-     return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
- }
+    @GetMapping("/{id}")
+    @ApiOperation("Obtém um produto pelo ID")
+    public ResponseEntity<Produto> obterProduto(@PathVariable Long id) {
+        Produto produto = produtoUseCase.obterProduto(id);
+        return produto != null ?
+                new ResponseEntity<>(produto, HttpStatus.OK) :
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
- @PutMapping("/{id}")
- public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produtoAtualizado) {
-     if (produtoRepository.existsById(id)) {
-    	 produtoAtualizado.setId(id);
-         Produto produtoAtualizadoSalvo = produtoRepository.save(produtoAtualizado);
-         return new ResponseEntity<>(produtoAtualizadoSalvo, HttpStatus.OK);
-     } else {
-         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-     }
- }
+    @PostMapping
+    @ApiOperation("Cria um novo produto")
+    public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
+        Produto novoProduto = produtoUseCase.criarProduto(produto);
+        return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
+    }
 
- @DeleteMapping("/{id}")
- public ResponseEntity<Void> excluirProduto(@PathVariable Long id) {
-     if (produtoRepository.existsById(id)) {
-    	 produtoRepository.deleteById(id);
-         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-     } else {
-         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-     }
- }
+    @PutMapping("/{id}")
+    @ApiOperation("Atualiza um produto pelo ID")
+    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produtoAtualizado) {
+        Produto produtoAtualizadoSalvo = produtoUseCase.atualizarProduto(id, produtoAtualizado);
+        return produtoAtualizadoSalvo != null ?
+                new ResponseEntity<>(produtoAtualizadoSalvo, HttpStatus.OK) :
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping("/{id}")
+    @ApiOperation("Exclui um produto pelo ID")
+    public ResponseEntity<Void> excluirProduto(@PathVariable Long id) {
+        boolean sucesso = produtoUseCase.excluirProduto(id);
+        return sucesso ?
+                new ResponseEntity<>(HttpStatus.NO_CONTENT) :
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
