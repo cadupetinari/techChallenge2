@@ -31,12 +31,12 @@ Com isto podemos garantir uma maior disponibilidade e confiabilidade da API, mes
 Para um maior detalhamento da utilização destas APIs, dispomos do Swagger da API:
 https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml
 
-E também dispomos de uma collection do Postman já configurada para utilização: XXXXX.
+E também dispomos de uma collection do Postman já configurada para utilização: https://github.com/cadupetinari/techChallenge2/blob/c2271823b16e05a4e5dac047e25f6ee7943ec4e7/docs/Collection%20FastFoodAP%20-%20Fase%202I.postman_collection.json.
 
 
 ## Apresentação
 
 Também para um maior esclarecimento sobre o projeto, foi criado um pitch explicando as premissas essenciais desta solução: XXXX.
 
-Grupo 65:
+Grupo 61:
 RM 353093 - Carlos Eduardo Coimbra
