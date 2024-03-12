@@ -36,7 +36,7 @@ E também dispomos de uma collection do Postman já configurada para utilizaçã
 
 ## Apresentação
 
-Também para um maior esclarecimento sobre o projeto, foi criado um pitch explicando as premissas essenciais desta solução: XXXX.
+Também para um maior esclarecimento sobre o projeto, foi criado um pitch explicando as premissas essenciais desta solução: https://youtu.be/jnqTjtpo-IM
 
 Grupo 61:
 RM 353093 - Carlos Eduardo Coimbra
