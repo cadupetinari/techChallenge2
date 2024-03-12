@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "361b9b4e-280e-48eb-9069-aa06f80be177",
+		"name": "Collection FastFoodAPI",
+		"description": "API para Gerenciamentos de Pedidos de um restaurante Fast Food",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11566210",
+		"_collection_link": "https://www.postman.com/planetary-meadow-203068/workspace/fiap-tech-challenge/collection/11566210-361b9b4e-280e-48eb-9069-aa06f80be177?action=share&source=collection_link&creator=11566210"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Consulta Consumidor por CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/usuario/39269343790",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"usuario",
+								"39269343790"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra um novo usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"39269343790\",\n    \"nome\": \"Ariana Passos Iwamoto\",\n    \"email\": \"ariana.iwamoto@geradornv.com.br\",\n    \"telefone\": \"(22) 99351-0666\",\n    \"senha\": \"\",\n    \"tipoUsuario\": \"Consumidor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Retorna todos os Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria um novo Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Chesseburger\",\n    \"descricao\": \"Chesseburger com molho da casa!\",\n    \"urlfoto\": \"https://encr.pw/fastfood\",\n    \"preco\": 9.50,\n    \"idCategoria\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Altera Produto por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Double Chesseburger\",\n    \"descricao\": \"Double Chesseburger com molho da casa!\",\n    \"urlfoto\": \"https://encr.pw/fastfood\",\n    \"preco\": 14.99,\n    \"idCategoria\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exclui Produto por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Retorna todos os Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Pedido por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/pedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"pedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria um novo Pedido",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"05850879706\",\n    \"valorTotal\": 47.98,\n    \"ordemFila\": 1,\n    \"dataCriacao\": \"29-01-2024 10:08:02\",\n    \"status\": \"Em Preparo\",\n    \"statusPagamento\": \"Pendente\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Altera Pedido por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"05850879706\",\n    \"valorTotal\": 120.98,\n    \"ordemFila\": 1,\n    \"dataCriacao\": \"29-01-2024 10:08:02\",\n    \"status\": \"Pronto\",\n    \"statusPagamento\": \"Pago\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/pedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"pedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exclui Produto por ID Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/produtos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"produtos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item Pedido",
+			"item": [
+				{
+					"name": "Retorna todos os Itens de Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/itemPedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"itemPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Pedido por ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/itemPedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"itemPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adiciona um novo Produto a um Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPedido\": 1,\n    \"idProduto\": 2,\n    \"quantidade\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/itemPedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"itemPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica Produto de um Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPedido\": 1,\n    \"idProduto\": 2,\n    \"quantidade\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/itemPedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"itemPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exclui Produto de um Pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/itemPedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"itemPedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Retorna Todas as Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Categoria por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/categorias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria uma nova Categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"Acompanhamento\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Altera Categoria por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"Sobremesa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/categorias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exclui Categoria por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/categorias/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"categorias",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pagamento",
+			"item": [
+				{
+					"name": "Recebe confirmação de pagamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/fastFoodApi/webhook/pagamento?idPedido=2&statusPagamento=Aprovado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fastFoodApi",
+								"webhook",
+								"pagamento"
+							],
+							"query": [
+								{
+									"key": "idPedido",
+									"value": "2"
+								},
+								{
+									"key": "statusPagamento",
+									"value": "Aprovado"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
