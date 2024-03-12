@@ -14,6 +14,7 @@ Para este cenário, foi desenhada a seguinte proposta de arquitetura:
 Coleções
 
 Para um maior detalhamento da utilização destas APIs, dispomos do Swagger da API:
+[![Swagger UI]([https://url-do-seu-swagger-ui](https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml))]([https://url-do-seu-swagger-ui](https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml))
 
 E também dispomos de uma collection do Postman já configurada para utilização: XXXXX.
 
