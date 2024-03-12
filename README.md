@@ -9,19 +9,18 @@ Arquitetura
 
 Para este cenário, foi desenhada a seguinte proposta de arquitetura:
 
+![FIAP - Tech Challenge-Modelo Negócios drawio-2](https://github.com/cadupetinari/techChallenge2/assets/93800409/66653e0c-d3b0-440c-8388-b82e95a3f572)
+
+![FIAP - Tech Challenge-Arquitetura Solução drawio](https://github.com/cadupetinari/techChallenge2/assets/93800409/6a70274b-67cc-4a57-85b1-d6d03eb07e07)
+
 
 
 Coleções
 
 Para um maior detalhamento da utilização destas APIs, dispomos do Swagger da API:
-[![Swagger UI](https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml))]([https://url-do-seu-swagger-ui](https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml))
+https://github.com/cadupetinari/techChallenge2/blob/3d2b9b9719ffd93d2130fdf298a80fbf3c33ab17/docs/FastFood%20API.yaml
 
 E também dispomos de uma collection do Postman já configurada para utilização: XXXXX.
-
-
-Guia da API
-
-Para um maior detalhamento do funcionamento da API, acesse a documentação criada: XXXXX.
 
 
 Apresentação
