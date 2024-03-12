@@ -38,5 +38,5 @@ E também dispomos de uma collection do Postman já configurada para utilizaçã
 
 Também para um maior esclarecimento sobre o projeto, foi criado um pitch explicando as premissas essenciais desta solução: XXXX.
 
-Grupo 65:
+Grupo 61:
 RM 353093 - Carlos Eduardo Coimbra
